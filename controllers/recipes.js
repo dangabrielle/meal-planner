@@ -2,6 +2,7 @@ const Recipe = require("../models/recipe");
 
 function newRecipe(req, res) {
   res.render("recipes/new", {
+    recipe: 'ingredients',
     title: "Enter a new Recipe",
   });
 }
