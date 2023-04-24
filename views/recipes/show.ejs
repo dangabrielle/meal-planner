@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>Day of Week</th>
+            <th>Entree Name</th>
+            <th>Cook Time</th>
+            <th>Ingredients</th>
+            <th>Directions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%=recipe.dayOfWeek%></td>
+            <td><%=recipe.entreeName%></td>
+            <td><%=recipe.cookTime%></td>
+            <td><%=recipe.ingredients%></td>
+            <td><%=recipe.directions%></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <main class="footer"><%- include('../partials/footer') %></main>
+  </body>
+</html>

@@ -17,7 +17,20 @@ async function create(req, res) {
   }
 }
 
+async function show(req, res) {
+  try {
+    const foundRecipe = await Recipe.findById(req.params.id);
+    res.render("recipes/show", {
+      title: "Your Recipe",
+      recipe: foundRecipe,
+    });
+  } catch (error) {
+    res.render("error", { title: "Something went wrong" });
+  }
+}
+
 module.exports = {
   new: newRecipe,
   create,
+  show,
 };
