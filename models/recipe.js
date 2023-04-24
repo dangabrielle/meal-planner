@@ -24,12 +24,11 @@ const recipeSchema = new Schema(
     cookTime: {
       type: Number,
     },
-    // ingredients: [ingredientSchema],
-    ingredients: String,
-    directions: {
-      type: String,
-      required: true,
-    },
+    ingredients: { type: String },
+    // directions: {
+    //   type: String,
+    //   required: true,
+    // },
   },
   { timestamps: true }
 );

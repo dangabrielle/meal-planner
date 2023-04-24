@@ -9,7 +9,7 @@ function newRecipe(req, res) {
 async function create(req, res) {
   try {
     await Recipe.create(req.body);
-    res.redirect("/recipes");
+    res.redirect("/");
   } catch (error) {
     console.log(error);
     res.render("error", { title: "Something went wrong" });
