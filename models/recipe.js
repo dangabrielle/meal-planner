@@ -2,13 +2,6 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const ingredientSchema = new Schema(
-  {
-    ingredientName: { type: String },
-    // quantity: { type: Number },
-  },
-  { timestamps: true }
-);
 
 const recipeSchema = new Schema(
   {
@@ -24,7 +17,9 @@ const recipeSchema = new Schema(
     cookTime: {
       type: Number,
     },
-    ingredients: [ingredientSchema],
+    ingredients: {
+      type: String
+    },
     directions: {
       type: String,
       required: true,
