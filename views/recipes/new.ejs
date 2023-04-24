@@ -4,7 +4,7 @@
   <body>
     <%- include('../partials/header') %>
     <h2>Add New Recipe</h2>
-    <form action="/recipes/new" method="POST">
+    <form action="/recipes" method="POST">
       <label
         >Day of the week:
         <select name="dayOfWeek">
@@ -28,7 +28,7 @@
       <br />
       <label>
         Directions:
-        <textarea name="content" cols="50" rows="4" required></textarea>
+        <textarea name="directions" cols="50" rows="4"></textarea>
       </label>
       <button type="submit">Add Recipe</button>
     </form>
