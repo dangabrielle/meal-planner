@@ -25,10 +25,10 @@ const recipeSchema = new Schema(
       type: Number,
     },
     ingredients: { type: String },
-    // directions: {
-    //   type: String,
-    //   required: true,
-    // },
+    directions: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
