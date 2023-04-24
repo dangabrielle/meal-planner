@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#index {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(5, 30vmin);
+  grid-template-rows: repeat(1, 20vmin);
+  justify-items: center;
+}
+
+#index > div {
+  margin: 20px;
+  text-align: center;
+  height: 30vmin;
+  width: 20vmin;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid rgba(121, 172, 121, 0.852);
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
