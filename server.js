@@ -15,7 +15,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/", indexRoutes);
-// app.use("/", recipeRoutes);
+app.use("/recipes", recipeRoutes);
 
 app.use("*", (req, res) => {
   res.render("404", { title: "404 - Page Not Found" });
