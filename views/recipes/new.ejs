@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head') %>
+  <%- include('../partials/head') %>
   <body>
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
     <h2>Add New Recipe</h2>
-    <%- include('./partials/footer') %>
-    <form action="/" method="POST">
-        <label>Day of the week: 
-            <select name="dayOfWeek">
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
-            </select>
-        </label><br>
-        <label>Entree Name:
-            <input type="text" name="entreeName">
-        </label><br>
-        <label>Cook Time:
-            <input type="text" name="cookTime">
-        </label><br>
-        <label>Ingredients:
-            <input type="text" name="ingredients">
-        </label><br>
-        <label>Cook Time:
-            <input type="text" name="cookTime">
-        </label><br>
-        <label>Directions:
-            <input type="text" name="directions">
-        </label><br>
-    </form> 
+    <form action="/recipes/new" method="POST">
+      <label
+        >Day of the week:
+        <select name="dayOfWeek">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+        </select> </label
+      ><br />
+      <label>Entree Name: <input type="text" name="entreeName" /> </label><br />
+      <label>Cook Time: <input type="text" name="cookTime" /> </label><br />
+      <label>Ingredients: <input type="text" name="ingredients" /> </label
+      ><br />
+      <label>
+        Directions:
+        <textarea name="content" cols="50" rows="4" required></textarea>
+      </label>
+      <button type="submit">Add Recipe</button>
+    </form>
+    <main class="footer"><%- include('../partials/footer') %></main>
   </body>
 </html>

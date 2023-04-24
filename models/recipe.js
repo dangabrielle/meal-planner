@@ -1,24 +1,37 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const recipeSchema = new Schema({
+// const ingredientSchema = new Schema(
+//   {
+//     ingredientName: { type: String },
+//     quantity: { type: Number },
+//   },
+//   { timestamps: true }
+// );
+
+const recipeSchema = new Schema(
+  {
     dayOfWeek: {
-        type: String, enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        required: true
+      type: String,
+      enum: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      required: true,
     },
     entreeName: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     cookTime: {
-        type: Number
+      type: Number,
     },
-    ingredients: [shoppingListSchema]
-    ,
+    // ingredients: [ingredientSchema],
+    ingredients: String,
     directions: {
-        type: String,
-        required: true
-    }},  {timestamps: true});
+      type: String,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('Recipe', recipeSchema)
+module.exports = mongoose.model("Recipe", recipeSchema);
