@@ -18,7 +18,7 @@ async function create(req, res) {
     // console.log(newIngredient);
     const recipe = await Recipe.create(req.body);
     recipe.ingredients.push(ingredientId);
-    console.log(recipe);
+    // console.log(recipe);
     recipe.save();
     res.redirect("/");
   } catch (error) {
@@ -30,9 +30,20 @@ async function create(req, res) {
 async function show(req, res) {
   try {
     const foundRecipe = await Recipe.findById(req.params.id);
+    // console.log(foundRecipe);
+    const foundIngredient = await Recipe.findById(req.params.id).populate(
+      "ingredients"
+    );
+
+    const findIngredient = await foundIngredient.ingredients;
+
+    console.log(findIngredient);
+
+    // console.log(foundIngredient);
     res.render("recipes/show", {
       title: "Your Recipe",
       recipe: foundRecipe,
+      ingredient: findIngredient,
     });
   } catch (error) {
     res.render("error", { title: "Something went wrong" });

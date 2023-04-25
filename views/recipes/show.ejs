@@ -19,11 +19,17 @@
             <td><%=recipe.dayOfWeek%></td>
             <td><%=recipe.entreeName%></td>
             <td><%=recipe.cookTime%></td>
-            <td><%=recipe.ingredients%></td>
+            <td><%=ingredient.ingredients%></td>
             <td><%=recipe.directions%></td>
           </tr>
         </tbody>
       </table>
+      <%ingredient.forEach(p => { %>
+        <ul>
+          <li><%=p.ingredientName%></li>
+        </ul>
+   <%   })%>
+    </ul>
     </section>
 
     <main class="footer"><%- include('../partials/footer') %></main>
