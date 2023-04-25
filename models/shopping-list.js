@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 const shoppingListSchema = new Schema(
   {
     name: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: "Ingredient",
       required: true,
       unique: true,
     },

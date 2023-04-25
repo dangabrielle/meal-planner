@@ -4,12 +4,18 @@
   box-sizing: border-box;
 }
 
+
 body {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.logo {
+  height: 30vh;
+  width: 30vh;
 }
 
 #index {
@@ -39,6 +45,22 @@ body {
 
 li {
   list-style-type: none;
+}
+
+section {
+  display: flex;
+}
+
+.ingredients-table {
+  padding: 5px 5px;
+  margin: 5px 5px;
+  text-align: center;
+  border: 1px dotted darkgrey ;
+}
+
+td {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
