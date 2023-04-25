@@ -17,8 +17,8 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/", indexRoutes);
+// app.use("/ingredients", ingredientRoutes);
 app.use("/recipes", recipeRoutes);
-// app.use("/recipes", ingredientRoutes);
 
 app.use("/shopping-list", shoppingListRoutes);
 

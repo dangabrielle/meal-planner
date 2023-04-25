@@ -4,26 +4,37 @@
   <body>
     <%- include('../partials/header') %>
     <section>
-      <table>
-        <thead>
-          <tr>
-            <th>Day of Week</th>
-            <th>Entree Name</th>
-            <th>Cook Time</th>
-            <th>Ingredients</th>
-            <th>Directions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><%=recipe.dayOfWeek%></td>
-            <td><%=recipe.entreeName%></td>
-            <td><%=recipe.cookTime%></td>
-            <td><%=recipe.ingredients%></td>
-            <td><%=recipe.directions%></td>
-          </tr>
-        </tbody>
-      </table>
+      <div>
+        <h2>Day of Week: <%=recipe.dayOfWeek%></h2>
+      </div>
+      <div>
+        <h2>Entree Name</h2>
+        <p><%=recipe.entreeName%></p>
+      </div>
+      <div>
+        <h2>Cook Time</h2>
+
+        <p><%=recipe.cookTime%></p>
+      </div>
+      <div>
+        <h2>Ingredients</h2>
+        <%ingredient.forEach(p => { %>
+          <ul>
+            <li><%=p.quantity%> <%=p.ingredientName%></li>
+          </ul>
+     <%   })%>
+      </ul>
+
+      </div>
+      <div>
+
+        <h2>Directions</h2>
+
+        <p><%=recipe.directions%></p>
+
+      </div>
+        
+    
     </section>
 
     <main class="footer"><%- include('../partials/footer') %></main>
