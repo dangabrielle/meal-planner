@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-
 const recipeSchema = new Schema(
   {
     dayOfWeek: {
@@ -17,9 +16,12 @@ const recipeSchema = new Schema(
     cookTime: {
       type: Number,
     },
-    ingredients: {
-      type: String
-    },
+    ingredients: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Ingredient",
+      },
+    ],
     directions: {
       type: String,
       required: true,

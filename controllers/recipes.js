@@ -1,15 +1,25 @@
 const Recipe = require("../models/recipe");
+const Ingredient = require("../models/ingredient");
 
 function newRecipe(req, res) {
   res.render("recipes/new", {
-    recipe: 'ingredients',
+    recipe: "ingredients",
     title: "Enter a new Recipe",
   });
 }
 
 async function create(req, res) {
   try {
-    await Recipe.create(req.body);
+    // const ingredient = req.body;
+    // ingredient.ingredients = req.params.id;
+    const newIngredient = await Ingredient.create(req.body);
+    const ingredientId = newIngredient._id;
+    // console.log(ingredientId);
+    // console.log(newIngredient);
+    const recipe = await Recipe.create(req.body);
+    recipe.ingredients.push(ingredientId);
+    console.log(recipe);
+    recipe.save();
     res.redirect("/");
   } catch (error) {
     console.log(error);

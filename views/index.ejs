@@ -5,48 +5,71 @@
     <%- include('./partials/header') %>
     <h2>Week-Day Meal Planner</h2>
     <!-- ADD LINKS HERE -->
-    <a href="">View Shopping List</a>
     <section id="index">
-      <div>
+      <div class="week-day">
         Monday<br />
         <a href="/recipes/new">Create a Recipe</a><br />
         <p>List of Recipes:</p>
         <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Monday') {%>
-        <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+        <ul>
+          <li>
+            <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+          </li>
+        </ul>
         <%} %> <% }) %>
       </div>
-      <div>
+      <div class="week-day">
         Tuesday<br />
         <a href="/recipes/new">Create a Recipe</a><br />
         <p>List of Recipes:</p>
         <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Tuesday') {%>
-        <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+        <ul>
+          <li>
+            <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+          </li>
+        </ul>
         <%} %> <% }) %>
       </div>
-      <div>
+      <div class="week-day">
         Wednesday<br />
         <a href="/recipes/new">Create a Recipe</a><br />
         <p>List of Recipes:</p>
         <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Wednesday') {%>
-        <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+        <ul>
+          <li>
+            <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+          </li>
+        </ul>
         <%} %> <% }) %>
       </div>
-      <div>
+      <div class="week-day">
         Thursday<br />
         <a href="/recipes/new">Create a Recipe</a><br />
         <p>List of Recipes:</p>
         <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Thursday') {%>
-        <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+        <ul>
+          <li>
+            <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+          </li>
+        </ul>
         <%} %> <% }) %>
       </div>
-      <div>
+      <div class="week-day">
         Friday<br />
         <a href="/recipes/new">Create a Recipe</a>
         <br />
         <p>List of Recipes:</p>
         <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Friday') {%>
-        <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+        <ul>
+          <li>
+            <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+          </li>
+        </ul>
         <%} %> <% }) %>
+      </div>
+      <div id="shopping-list">
+        <a href="">View Shopping List</a>
+        <p>Preview:</p>
       </div>
     </section>
     <main class="footer"><%- include('./partials/footer') %></main>
