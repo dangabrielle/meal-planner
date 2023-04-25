@@ -1,20 +1,33 @@
-const Recipe = require("../models/recipe");
+// const Recipe = require("../models/recipe");
+// const Ingredient = require("../models/ingredient");
 
+// async function create(req, res) {
+//   try {
+//     // const ingredient = req.body;
+//     // ingredient.ingredientName = req.params.id;
+//     await
+//     await Recipe.create(req.body);
+//     res.render("recipes/new");
+//   } catch (error) {
+//     console.log(error);
+//     res.render("error", { title: "Something went wrong" });
+//   }
+// }
 
-async function create(req, res) {
-    try {
-        const foundRecipe = await Recipe.findById(req.params.id);
-        let newIngredientObj = foundRecipe.ingredients.push(req.body);
-        console.log(newIngredientObj)
-        await foundRecipe.save();
-        
-    } catch (error) {
-        console.log(error);
-        res.render('error', {title: 'Something went wrong'});
-    }
-};
+// async function newIngredient(req, res) {
+//   try {
+//     const foundIngredient = await Ingredient.find({});
+//     res.render("recipes/new", {
+//       ingredient: foundIngredient,
+//       title: "Enter a new ingredient",
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     res.render("error", { title: "Something went wrong" });
+//   }
+// }
 
-
-module.exports = {
-    create
-};
+// module.exports = {
+//   create,
+//   new: newIngredient,
+// };
