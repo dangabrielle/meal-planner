@@ -9,10 +9,10 @@ const ingredientSchema = new Schema(
       // required: true,
       // unique: true,
     },
-    // quantity: {
-    //     type: Number,
-    //     required: true,
-    // },
+    quantity: {
+      type: Number,
+      // required: true,
+    },
   },
   { timestamps: true }
 );
