@@ -15,6 +15,12 @@
           <option value="Friday">Friday</option>
         </select> </label
       ><br />
+      <label
+        >Ingredient:
+        <input class="ingredient-value" type="text" name="ingredientName" />
+        <button type="submit">Add ingredient</button>
+      </label>
+      <br />
       <label>Entree Name: <input type="text" name="entreeName" /> </label><br />
       <label>Cook Time: <input type="text" name="cookTime" /> </label><br />
       <label>
@@ -23,20 +29,7 @@
       </label>
       <button type="submit">Add Recipe</button>
     </form>
-    <form action="/recipes/new" method="POST">
-      <label>Ingredients  
-        <input class="ingredient-value" type="text" name="ingredients">
-        <% Object.entries(recipe).forEach(([key, value]) => { %>
-          <% if (key === 'ingredients') { %>
-            <% value.forEach(ingredient => { %>
-              <% console.log(ingredient); %>
-            <% }); %>
-          <% } %>
-        <% }); %>
 
-      </label>
-    </form>
-    
     <main class="footer"><%- include('../partials/footer') %></main>
   </body>
 </html>

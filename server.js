@@ -2,6 +2,8 @@ const express = require("express");
 const logger = require("morgan");
 const indexRoutes = require("./routes/index");
 const recipeRoutes = require("./routes/recipes");
+const ingredientRoutes = require("./routes/ingredients");
+// const shoppingListRoutes = require("./routes/shopping-list");
 
 const app = express();
 
@@ -16,6 +18,9 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/", indexRoutes);
 app.use("/recipes", recipeRoutes);
+// app.use("/recipes", ingredientRoutes);
+
+// app.use("/shopping-list", shoppingListRoutes);
 
 app.use("*", (req, res) => {
   res.render("404", { title: "404 - Page Not Found" });
