@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+    <h2>Add New Ingredient</h2>
+<form action="/recipes/new" method="POST">
+    <label>Ingredients  
+      <input class="ingredient-value" type="text" name="ingredients">
+      <button type="submit">Submit</button>
+    </label>
+  </form>
+  <main class="footer"><%- include('../partials/footer') %></main>
+  </body>
+</html>

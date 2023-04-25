@@ -1,9 +1,26 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/head') %>
   <body>
-    <%- include('../partials/header') %>
-
-    <main class="footer"><%- include('../partials/footer') %></main>
+  <%- include('../partials/header') %>
+    <section>
+      <table class="ingredients-table">
+        <thead>
+          <tr>
+            <th>Item</th><br>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% Object.values(Ingredient).forEach(i => { %>
+            <td><%= i.ingredientName %></td><br>
+            <td><%= i.quantity %></td>
+            <% }) %>
+          </tr>
+        </tbody>
+      </table>
+    </section> 
+  <%- include('../partials/footer') %>
   </body>
-</html> -->
+</html>
