@@ -1,16 +1,31 @@
-// const Recipe = require("../models/recipe");
-// const ShoppingList = require("../models/shopping-list");
+const Ingredient = require("../models/ingredient");
 
-// async function index(req, res) {
-//   try {
-//     const foundRecipe = await Recipe.find({});
-//     console.log(foundRecipe);
-//     res.render("/shopping-list/index", { title: "Weekly Meal Planner", recipe: foundRecipe });
-//   } catch (error) {
-//     res.render("error", { title: "Something went wrong" });
-//   }
-// }
+async function deleteOne(req, res) {
+    try {
+    const  deleteItem = await Ingredient.findByIdAndRemove(req.params.id);
+    res.redirect("/shopping-list")
+    } catch (error) {
+        res.render("error", { title: "Something went wrong" });
+      }
 
-// module.exports = {
-//   index,
-// };
+}
+
+async function index(req, res) {
+  try {
+    const allIngredients = await Ingredient.find({}).populate('ingredientName')
+    console.log(allIngredients);
+
+    res.render("shopping-list/index", 
+    { 
+        title: "Shopping List", 
+        Ingredient: allIngredients,
+    });
+  } catch (error) {
+    res.render("error", { title: "Something went wrong" });
+  }
+}
+
+module.exports = {
+  index,
+  delete: deleteOne,
+};

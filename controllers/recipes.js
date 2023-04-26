@@ -19,8 +19,6 @@ async function create(req, res) {
     // await Recipe.create(req.body)
     const newIngredient = await Ingredient.create(req.body);
     const ingredientId = newIngredient._id;
-    // console.log(ingredientId);
-    // console.log(newIngredient);
     const recipe = await Recipe.create(req.body);
     recipe.ingredients.push(ingredientId);
     // console.log(recipe);

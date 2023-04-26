@@ -1,9 +1,27 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/head') %>
   <body>
-    <%- include('../partials/header') %>
+  <%- include('../partials/header') %>
+    <section class="table">
+      <table class="ingredients-table">
+       
+          <tr>
+            <th>Item</th><br>
+            <th>Quantity</th>
+          </tr>            
+          <% Object.values(Ingredient).forEach(i => { %>
 
-    <main class="footer"><%- include('../partials/footer') %></main>
+          <tr>
+            <td><%= i.ingredientName %></td>
+            <td><%= i.quantity %></td>
+            <td><form action='/shopping-list/<%=i._id%>?_method=DELETE' method='POST'><input class="delete" type='submit' value='X'></form></td>
+            
+           
+          </tr>
+         <% }) %>
+      </table>
+    </section> 
+  <%- include('../partials/footer') %>
   </body>
-</html> -->
+</html>
