@@ -46,8 +46,9 @@ li {
   list-style-type: none;
 }
 
-.table {
-  display: flex;
+.delete-button {
+  text-align: center;
+}
 
 .ingredients-table {
   padding: 5px 5px;
@@ -56,11 +57,8 @@ li {
   border: 1px dotted darkgrey;
 }
 
-
-
 .delete {
   background-color: red;
-
 }
 
 .footer {
