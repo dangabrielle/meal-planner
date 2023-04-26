@@ -13,7 +13,7 @@ async function create(req, res) {
     req.body.ingredientName = req.body.ingredientName.trim(); // remove space chars at beginning or ending of string
     req.body.ingredientName = req.body.ingredientName.split(/\s*,\s*/); // split comma seperated names into array
 
-    const newIngredient = await Ingredient.create(req.body);
+    // const newIngredient = await Ingredient.create(req.body);
     const ingredientId = newIngredient._id;
     // const ingredient = await Ingredient.find({}).sort("ingredientName");
     // console.log(ingredient);
@@ -27,6 +27,16 @@ async function create(req, res) {
     console.log(error);
     res.render("error", { title: "Something went wrong" });
   }
+}
+
+async function update(req, res) {
+    try {
+      
+
+    } catch (error) {
+      console.log(error);
+      res.render("error", { title: "Something went wrong" });
+    }
 }
 
 async function show(req, res) {
@@ -71,4 +81,5 @@ module.exports = {
   create,
   show,
   addToRecipe,
+  update,
 };
