@@ -2,27 +2,33 @@
 <html lang="en">
   <%- include('../partials/head') %>
   <body>
-  <%- include('../partials/header') %>
+    <%- include('../partials/header') %>
     <section class="table">
       <table class="ingredients-table">
-       
+        <thead>
           <tr>
             <th>Item</th>
-            <br />
-            <th>Quantity</th>
-          </tr>            
-    
-
-            <% Object.values(Ingredient).forEach(i => { %>
-            <td><%= i.ingredientName %></td>
-            <td><%= i.ingredientName %></td>
-
-            <td><%= i.quantity %></td>
-            <td><form action='/shopping-list/<%=i._id%>?_method=DELETE' method='POST'><input class="delete" type='submit' value='X'></form></td>
-            
-           
+            <th>Delete</th>
           </tr>
-         <% }) %>
+        </thead>
+        <tbody>
+          <% Object.values(Ingredient).forEach(i => { %> <%
+          i.ingredientName.forEach(r => { %>
+          <tr>
+            <td><%=r%></td>
+            <td>
+              <form
+                class="delete-button"
+                action="/shopping-list/<%=i._id%>?_method=DELETE"
+                method="POST"
+              >
+                <input class="delete" type="submit" value="X" />
+              </form>
+            </td>
+          </tr>
+
+          <% }) %> <% }) %>
+        </tbody>
       </table>
     </section>
     <%- include('../partials/footer') %>

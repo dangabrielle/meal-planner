@@ -31,14 +31,28 @@
 
       </div>
       <div>
-
         <h2>Directions</h2>
 
         <p><%=recipe.directions%></p>
-
       </div>
-        
-    
+
+      <div>
+        <h3>Forgot an ingredient? Let's check our list:</h3>
+        <ul>
+          <% recipe.ingredients.forEach(p => { %>
+          <li><%=p.ingredientName%></li>
+          <% })%>
+        </ul>
+        <form action="/recipes/<%= recipe._id %>/ingredients" method="POST">
+          <select name="ingredientId">
+            <% newIngredient.map(p => { %>
+
+              <option value="<%=p._id%>"><%=p.ingredientName%></option>
+          <%  } ) %>
+          </select>
+          <button type="submit">Add to Cast</button>
+        </form>
+      </div>
     </section>
 
     <main class="footer"><%- include('../partials/footer') %></main>
