@@ -48,6 +48,7 @@ li {
 
 .table {
   display: flex;
+}
 
 .ingredients-table {
   padding: 5px 5px;
