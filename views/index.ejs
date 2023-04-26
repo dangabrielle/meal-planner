@@ -3,69 +3,121 @@
   <%- include('./partials/head') %>
   <body>
     <%- include('./partials/header') %>
-    <h2>Week-Day Meal Planner</h2>
+    <h2>Let's start prepping!</h2>
     <!-- ADD LINKS HERE -->
     <section id="index">
       <div class="week-day">
-        Monday<br />
-        <a href="/recipes/new">Create a Recipe</a><br />
-        <p>List of Recipes:</p>
-        <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Monday') {%>
-        <ul>
-          <li>
-            <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
-          </li>
-        </ul>
-        <%} %> <% }) %>
+        <div class="idx-img">
+          <img
+            src="/imgs/beige-sticky.png"
+            class="beige-sticky"
+            height="385px"
+            width="270px"
+          />
+        </div>
+        <div class="idx-content">
+          Monday<br />
+
+          <a href="/recipes/new">Create a Recipe</a><br />
+          <p>List of Recipes:</p>
+          <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Monday') {%>
+          <ul>
+            <li>
+              <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+            </li>
+          </ul>
+          <%} %> <% }) %>
+        </div>
+      </div>
+
+      <div class="week-day">
+        <div class="idx-img">
+          <img
+            src="/imgs/beige-sticky.png"
+            class="beige-sticky"
+            height="385px"
+            width="270px"
+          />
+        </div>
+        <div class="idx-content">
+          Tuesday<br />
+          <a href="/recipes/new">Create a Recipe</a><br />
+          <p>List of Recipes:</p>
+          <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Tuesday') {%>
+          <ul>
+            <li>
+              <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+            </li>
+          </ul>
+          <%} %> <% }) %>
+        </div>
       </div>
       <div class="week-day">
-        Tuesday<br />
-        <a href="/recipes/new">Create a Recipe</a><br />
-        <p>List of Recipes:</p>
-        <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Tuesday') {%>
-        <ul>
-          <li>
-            <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
-          </li>
-        </ul>
-        <%} %> <% }) %>
+        <div class="idx-img">
+          <img
+            src="/imgs/beige-sticky.png"
+            class="beige-sticky"
+            height="385px"
+            width="270px"
+          />
+        </div>
+        <div class="idx-content">
+          Wednesday<br />
+          <a href="/recipes/new">Create a Recipe</a><br />
+          <p>List of Recipes:</p>
+          <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Wednesday') {%>
+          <ul>
+            <li>
+              <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+            </li>
+          </ul>
+          <%} %> <% }) %>
+        </div>
       </div>
       <div class="week-day">
-        Wednesday<br />
-        <a href="/recipes/new">Create a Recipe</a><br />
-        <p>List of Recipes:</p>
-        <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Wednesday') {%>
-        <ul>
-          <li>
-            <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
-          </li>
-        </ul>
-        <%} %> <% }) %>
+        <div class="idx-img">
+          <img
+            src="/imgs/beige-sticky.png"
+            class="beige-sticky"
+            height="385px"
+            width="270px"
+          />
+        </div>
+        <div class="idx-content">
+          Thursday<br />
+          <a href="/recipes/new">Create a Recipe</a><br />
+          <p>List of Recipes:</p>
+          <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Thursday') {%>
+          <ul>
+            <li>
+              <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+            </li>
+          </ul>
+          <%} %> <% }) %>
+        </div>
       </div>
       <div class="week-day">
-        Thursday<br />
-        <a href="/recipes/new">Create a Recipe</a><br />
-        <p>List of Recipes:</p>
-        <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Thursday') {%>
-        <ul>
-          <li>
-            <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
-          </li>
-        </ul>
-        <%} %> <% }) %>
-      </div>
-      <div class="week-day">
-        Friday<br />
-        <a href="/recipes/new">Create a Recipe</a>
-        <br />
-        <p>List of Recipes:</p>
-        <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Friday') {%>
-        <ul>
-          <li>
-            <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
-          </li>
-        </ul>
-        <%} %> <% }) %>
+        <div class="idx-img">
+          <img
+            src="/imgs/beige-sticky.png"
+            class="beige-sticky"
+            height="385px"
+            width="270px"
+          />
+        </div>
+        <div class="idx-content">
+          Friday<br />
+          <a href="/recipes/new">Create a Recipe</a>
+          <br />
+          <p>List of Recipes:</p>
+          <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Friday') {%>
+          <ul>
+            <li>
+              <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+            </li>
+          </ul>
+          <%} %> <% }) %>
+        </div>
       </div>
       <div id="shopping-list">
         <a href="/shopping-list">View Shopping List</a>

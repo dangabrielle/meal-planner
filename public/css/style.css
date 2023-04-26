@@ -10,36 +10,91 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: sans-serif;
+}
+
+.header {
+  display: flex;
+  flex: row;
+  justify-content: center;
+}
+
+.header > div > h1 {
+  margin: 20px;
+  margin-top: 40px;
+}
+
+.header > div > p {
+  text-align: center;
+}
+
+.header > div > ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.header > div > ul > li {
+  padding: 10px;
 }
 
 .logo {
   height: 30vh;
   width: 30vh;
 }
-
+/* index section  */
 #index {
   display: grid;
   grid-template-columns: repeat(3, 30vmin);
-  grid-template-rows: repeat(2, 40vmin);
+  grid-template-rows: repeat(2, 37vmin);
   justify-items: center;
   margin: 20px;
 }
-.week-day {
-  /* margin: 20px; */
-  text-align: center;
-  height: 30vmin;
-  line-height: 1.3;
-  width: 20vmin;
-  padding: 30px;
-  border-radius: 10px;
-  border: 2px solid rgba(121, 172, 121, 0.852);
+
+.idx-content {
+  position: relative;
+  z-index: 1;
 }
 
+.idx-img {
+  position: absolute;
+  top: -50px;
+  left: -35px;
+}
+
+.week-day {
+  /* margin: 20px; */
+  position: relative;
+  text-align: center;
+  height: 295px;
+  line-height: 1.3;
+  width: 200px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: gray 0px 5px 15px;
+  /* box-shadow: gray 0px 5px 15px; */
+  /* background-color: rgb(243, 243, 239);
+  border: 1px dotted darkgrey; */
+  /* background-image: url("../imgs/green-sticky.png");
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: auto;
+  background-repeat: no-repeat; */
+}
+
+/* img {
+  position: relative;
+} */
+
 #shopping-list {
-  height: 30vmin;
-  width: 20vmin;
+  height: 32vmin;
+  width: 22vmin;
   border-radius: 10px;
-  border: 2px solid purple;
+  border: 2px dotted darkgray;
+  position: relative;
+  text-align: center;
+  line-height: 1.3;
+  padding: 30px;
+  box-shadow: gray 0px 5px 15px;
 }
 
 li {
@@ -76,6 +131,8 @@ li {
   position: fixed;
   left: 0;
   bottom: 0;
+  height: 20px;
   width: 100%;
   text-align: center;
+  background-color: aliceblue;
 }
