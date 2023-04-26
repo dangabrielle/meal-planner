@@ -8,10 +8,6 @@ const shoppingListSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Ingredient",
       required: true,
-      unique: true,
-    },
-    quantity: {
-      type: Number,
     },
   },
   { timestamps: true }

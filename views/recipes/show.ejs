@@ -46,8 +46,9 @@
         <form action="/recipes/<%= recipe._id %>/ingredients" method="POST">
           <select name="ingredientId">
             <% newIngredient.map(p => { %>
-
-              <option value="<%=p._id%>"><%=p.ingredientName%></option>
+              <%p.ingredientName.forEach(i => { %>
+              <option value="<%=p._id%>"> <%=i%></option>
+             <% })%>
           <%  } ) %>
           </select>
           <button type="submit">Add to Cast</button>
