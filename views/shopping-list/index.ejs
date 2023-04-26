@@ -3,22 +3,23 @@
   <%- include('../partials/head') %>
   <body>
   <%- include('../partials/header') %>
-    <section>
+    <section class="table">
       <table class="ingredients-table">
-        <thead>
+       
           <tr>
             <th>Item</th><br>
             <th>Quantity</th>
-          </tr>
-        </thead>
-        <tbody>
+          </tr>            
+          <% Object.values(Ingredient).forEach(i => { %>
+
           <tr>
-            <% Object.values(Ingredient).forEach(i => { %>
-            <td><%= i.ingredientName %></td><br>
+            <td><%= i.ingredientName %></td>
             <td><%= i.quantity %></td>
-            <% }) %>
+            <td><form action='/shopping-list/<%=i._id%>?_method=DELETE' method='POST'><input class="delete" type='submit' value='X'></form></td>
+            
+           
           </tr>
-        </tbody>
+         <% }) %>
       </table>
     </section> 
   <%- include('../partials/footer') %>

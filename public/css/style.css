@@ -47,7 +47,7 @@ li {
   list-style-type: none;
 }
 
-section {
+.table {
   display: flex;
 }
 
@@ -58,9 +58,11 @@ section {
   border: 1px dotted darkgrey ;
 }
 
-td {
-  display: flex;
-  flex-direction: column;
+
+
+.delete {
+  background-color: red;
+
 }
 
 .footer {

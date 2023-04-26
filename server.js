@@ -6,6 +6,8 @@ const ingredientRoutes = require("./routes/ingredients");
 const shoppingListRoutes = require("./routes/shopping-list");
 
 const app = express();
+const methodOverride = require('method-override');
+
 
 app.set("view engine", "ejs");
 
@@ -14,6 +16,8 @@ require("./config/database");
 
 app.use(logger("dev"));
 app.use(express.static("public"));
+app.use(methodOverride('_method'));
+
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/", indexRoutes);
