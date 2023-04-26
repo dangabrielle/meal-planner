@@ -7,13 +7,16 @@
       <table class="ingredients-table">
        
           <tr>
-            <th>Item</th><br>
+            <th>Item</th>
+            <br />
             <th>Quantity</th>
           </tr>            
-          <% Object.values(Ingredient).forEach(i => { %>
+    
 
-          <tr>
+            <% Object.values(Ingredient).forEach(i => { %>
             <td><%= i.ingredientName %></td>
+            <td><%= i.ingredientName %></td>
+
             <td><%= i.quantity %></td>
             <td><form action='/shopping-list/<%=i._id%>?_method=DELETE' method='POST'><input class="delete" type='submit' value='X'></form></td>
             
@@ -21,7 +24,7 @@
           </tr>
          <% }) %>
       </table>
-    </section> 
-  <%- include('../partials/footer') %>
+    </section>
+    <%- include('../partials/footer') %>
   </body>
 </html>

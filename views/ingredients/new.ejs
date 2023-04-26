@@ -4,18 +4,22 @@
   <body>
     <%- include('../partials/header') %>
     <h2>First, let's add our ingredients.</h2>
-    <form action="/ingredients" method="POST">
+
+    <form action="/ingredients/" method="POST">
       <label
         >Ingredient:
         <input type="text" name="ingredientName" />
-        Quantity:
-        <input type="number" name="quantity" />
-      </label>
+       
       <button type="submit">Add Ingredient</button>
     </form>
+    <a href="/recipes/new">Start Creating Your Recipe</a>
+    
     <ul>
-      <li><%=ingredient.quantity %><%=ingredient.ingredientName%></li>
-    </ul>
+            <%ingredient.forEach(i => { %>
+          <li><%=i.ingredientName%></li>
+        </ul>
+  <%  }) %>
+
 
     <main class="footer"><%- include('../partials/footer') %></main>
   </body>

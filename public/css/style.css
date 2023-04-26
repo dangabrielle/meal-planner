@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   margin-top: 20px;
   display: flex;
@@ -49,13 +48,12 @@ li {
 
 .table {
   display: flex;
-}
 
 .ingredients-table {
   padding: 5px 5px;
   margin: 5px 5px;
   text-align: center;
-  border: 1px dotted darkgrey ;
+  border: 1px dotted darkgrey;
 }
 
 
