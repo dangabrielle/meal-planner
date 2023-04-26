@@ -1,5 +1,6 @@
 const Recipe = require("../models/recipe");
 const Ingredient = require("../models/ingredient");
+const ingredient = require("../models/ingredient");
 
 function newRecipe(req, res) {
   res.render("recipes/new", {
@@ -41,9 +42,9 @@ async function show(req, res) {
     const ingredients = await Ingredient.find({
       _id: { $nin: foundRecipe.ingredients },
     }).sort("newIngredient");
-    console.log(findIngredient);
-
-    console.log(foundIngredient);
+    // console.log(findIngredient);
+    console.log(ingredients);
+    // console.log(foundIngredient);
     res.render("recipes/show", {
       title: "Your Recipe",
       recipe: foundRecipe,
