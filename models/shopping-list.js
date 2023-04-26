@@ -10,9 +10,9 @@ const shoppingListSchema = new Schema(
       required: true,
       unique: true,
     },
-    // quantity: {
-    //   type: Number,
-    // },
+    quantity: {
+      type: Number,
+    },
   },
   { timestamps: true }
 );

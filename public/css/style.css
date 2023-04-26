@@ -46,9 +46,8 @@ li {
   list-style-type: none;
 }
 
-/* section {
+.table {
   display: flex;
-} */
 
 .ingredients-table {
   padding: 5px 5px;
@@ -57,9 +56,11 @@ li {
   border: 1px dotted darkgrey;
 }
 
-td {
-  display: flex;
-  flex-direction: column;
+
+
+.delete {
+  background-color: red;
+
 }
 
 .footer {

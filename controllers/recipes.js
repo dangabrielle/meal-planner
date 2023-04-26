@@ -10,17 +10,17 @@ function newRecipe(req, res) {
 
 async function create(req, res) {
   try {
-    // if (req.body.ingredients) {
-    // req.body.cast = req.body.cast.replace(/\s*,\s*/, ''); // remove all space chars before or after commas
+
+ 
     req.body.ingredientName = req.body.ingredientName.trim(); // remove space chars at beginning or ending of string
     req.body.ingredientName = req.body.ingredientName.split(/\s*,\s*/); // split comma seperated names into array
-    // }
-
+  
+    
     const newIngredient = await Ingredient.create(req.body);
     const ingredientId = newIngredient._id;
     const recipe = await Recipe.create(req.body);
     recipe.ingredients.push(ingredientId);
-    console.log(recipe);
+    // console.log(recipe);
     recipe.save();
     res.redirect("/");
   } catch (error) {

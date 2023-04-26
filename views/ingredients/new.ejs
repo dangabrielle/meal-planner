@@ -4,6 +4,7 @@
   <body>
     <%- include('../partials/header') %>
     <h2>First, let's add our ingredients.</h2>
+
     <form action="/ingredients/" method="POST">
       <label
         >Ingredient:
@@ -18,6 +19,7 @@
           <li><%=i.ingredientName%></li>
         </ul>
   <%  }) %>
+
 
     <main class="footer"><%- include('../partials/footer') %></main>
   </body>
