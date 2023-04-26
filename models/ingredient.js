@@ -5,15 +5,16 @@ const Schema = mongoose.Schema;
 const ingredientSchema = new Schema(
   {
     ingredientName: {
-      type: String,
+      type: Array,
       // required: true,
       // unique: true,
     },
-    quantity: {
-      type: Number,
-      // required: true,
-    },
+    // quantity: {
+    //   type: Number,
+    // min: 1,
+    // required: true,
   },
+
   { timestamps: true }
 );
 

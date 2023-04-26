@@ -12,6 +12,11 @@ body {
   align-items: center;
 }
 
+.logo {
+  height: 30vh;
+  width: 30vh;
+}
+
 #index {
   display: grid;
   grid-template-columns: repeat(3, 30vmin);
@@ -39,6 +44,22 @@ body {
 
 li {
   list-style-type: none;
+}
+
+/* section {
+  display: flex;
+} */
+
+.ingredients-table {
+  padding: 5px 5px;
+  margin: 5px 5px;
+  text-align: center;
+  border: 1px dotted darkgrey;
+}
+
+td {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {

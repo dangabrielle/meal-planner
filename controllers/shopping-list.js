@@ -1,16 +1,20 @@
-// const Recipe = require("../models/recipe");
-// const ShoppingList = require("../models/shopping-list");
+const Ingredient = require("../models/ingredient");
 
-// async function index(req, res) {
-//   try {
-//     const foundRecipe = await Recipe.find({});
-//     console.log(foundRecipe);
-//     res.render("/shopping-list/index", { title: "Weekly Meal Planner", recipe: foundRecipe });
-//   } catch (error) {
-//     res.render("error", { title: "Something went wrong" });
-//   }
-// }
+async function index(req, res) {
+  try {
+    const allIngredients = await Ingredient.find({}).populate('ingredientName')
+    console.log(allIngredients);
 
-// module.exports = {
-//   index,
-// };
+    res.render("shopping-list/index", 
+    { 
+        title: "Weekly Meal Planner", 
+        Ingredient: allIngredients,
+    });
+  } catch (error) {
+    res.render("error", { title: "Something went wrong" });
+  }
+}
+
+module.exports = {
+  index,
+};
