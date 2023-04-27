@@ -16,14 +16,16 @@
           />
         </div>
         <div class="idx-content">
-          Monday<br />
+          <h3 class="day-of-week">Monday</h3>
 
-          <a href="/recipes/new">Create a Recipe</a><br />
+          <a class="recipe-btn" href="/recipes/new">Create a Recipe</a><br />
           <p>List of Recipes:</p>
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Monday') {%>
           <ul>
             <li>
-              <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+              <a class="recipe-list" href="/recipes/<%=r._id %>"
+                ><%=r.entreeName%></a
+              >
             </li>
           </ul>
           <%} %> <% }) %>
@@ -40,13 +42,13 @@
           />
         </div>
         <div class="idx-content">
-          Tuesday<br />
-          <a href="/recipes/new">Create a Recipe</a><br />
+          <h3 class="day-of-week">Tuesday</h3>
+          <a class="recipe-btn" href="/recipes/new">Create a Recipe</a><br />
           <p>List of Recipes:</p>
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Tuesday') {%>
           <ul>
             <li>
-              <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+              <a class="" href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
             </li>
           </ul>
           <%} %> <% }) %>
@@ -62,13 +64,15 @@
           />
         </div>
         <div class="idx-content">
-          Wednesday<br />
-          <a href="/recipes/new">Create a Recipe</a><br />
+          <h3 class="day-of-week">Wednesday</h3>
+          <a class="recipe-btn" href="/recipes/new">Create a Recipe</a><br />
           <p>List of Recipes:</p>
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Wednesday') {%>
           <ul>
             <li>
-              <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+              <a class="recipe-list" href="/recipes/<%=r._id %>"
+                ><%=r.entreeName%></a
+              >
             </li>
           </ul>
           <%} %> <% }) %>
@@ -84,13 +88,15 @@
           />
         </div>
         <div class="idx-content">
-          Thursday<br />
-          <a href="/recipes/new">Create a Recipe</a><br />
+          <h3 class="day-of-week">Thursday</h3>
+          <a class="recipe-btn" href="/recipes/new">Create a Recipe</a><br />
           <p>List of Recipes:</p>
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Thursday') {%>
           <ul>
             <li>
-              <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+              <a class="recipe-list" href="/recipes/<%=r._id %>"
+                ><%=r.entreeName%></a
+              >
             </li>
           </ul>
           <%} %> <% }) %>
@@ -106,22 +112,34 @@
           />
         </div>
         <div class="idx-content">
-          Friday<br />
-          <a href="/recipes/new">Create a Recipe</a>
+          <h3 class="day-of-week">Friday</h3>
+          <a class="recipe-btn" href="/recipes/new">Create a Recipe</a>
           <br />
           <p>List of Recipes:</p>
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Friday') {%>
           <ul>
             <li>
-              <a href="/recipes/<%=r._id %>"><%=r.entreeName%></a>
+              <a class="recipe-list" href="/recipes/<%=r._id %>"
+                ><%=r.entreeName%></a
+              >
             </li>
           </ul>
           <%} %> <% }) %>
         </div>
       </div>
       <div id="shopping-list">
-        <a href="/shopping-list">View Shopping List</a>
-        <p>Preview:</p>
+        <h3 class="day-of-week">Shopping List</h3>
+        <a class="recipe-btn" href="/shopping-list">View Entire List</a>
+        <div class="float-area">
+          <div class="floating-img">
+            <p>Preview:</p>
+            <% for (let i = 0; i < 4; i++) { %>
+            <ul>
+              <li><%=ingredient[i].ingredientName%></li>
+            </ul>
+            <% }%>
+          </div>
+        </div>
       </div>
     </section>
     <main class="footer"><%- include('./partials/footer') %></main>
