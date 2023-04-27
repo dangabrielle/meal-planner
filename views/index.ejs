@@ -19,7 +19,8 @@
           <h3 class="day-of-week">Monday</h3>
 
           <a class="recipe-btn" href="/recipes/new">Create a Recipe</a><br />
-          <p>List of Recipes:</p>
+          <p><em>Your Recipes:</em></p>
+
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Monday') {%>
           <ul>
             <li>
@@ -44,7 +45,8 @@
         <div class="idx-content">
           <h3 class="day-of-week">Tuesday</h3>
           <a class="recipe-btn" href="/recipes/new">Create a Recipe</a><br />
-          <p>List of Recipes:</p>
+          <p><em>Your Recipes:</em></p>
+
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Tuesday') {%>
           <ul>
             <li>
@@ -66,7 +68,8 @@
         <div class="idx-content">
           <h3 class="day-of-week">Wednesday</h3>
           <a class="recipe-btn" href="/recipes/new">Create a Recipe</a><br />
-          <p>List of Recipes:</p>
+          <p><em>Your Recipes:</em></p>
+
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Wednesday') {%>
           <ul>
             <li>
@@ -90,7 +93,8 @@
         <div class="idx-content">
           <h3 class="day-of-week">Thursday</h3>
           <a class="recipe-btn" href="/recipes/new">Create a Recipe</a><br />
-          <p>List of Recipes:</p>
+          <p><em>Your Recipes:</em></p>
+
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Thursday') {%>
           <ul>
             <li>
@@ -115,7 +119,8 @@
           <h3 class="day-of-week">Friday</h3>
           <a class="recipe-btn" href="/recipes/new">Create a Recipe</a>
           <br />
-          <p>List of Recipes:</p>
+          <p><em>Your Recipes:</em></p>
+
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Friday') {%>
           <ul>
             <li>
@@ -132,7 +137,7 @@
         <a class="recipe-btn" href="/shopping-list">View Entire List</a>
         <div class="float-area">
           <div class="floating-img">
-            <p>Preview:</p>
+            <p><strong>Preview:</strong></p>
             <% for (let i = 0; i < 4; i++) { %>
             <ul>
               <li><%=ingredient[i].ingredientName%></li>

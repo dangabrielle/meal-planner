@@ -55,8 +55,11 @@ async function show(req, res) {
     const populateIng = await Recipe.findById(req.params.id).populate(
       "ingredients"
     );
+
+
     const grabIngredient = await populateIng.ingredients;
     const sortedIngredients = await IngredientModel.find({
+
       _id: { $nin: foundRecipe.ingredients },
     }).sort("newIngredient");
     res.render("recipes/show", {

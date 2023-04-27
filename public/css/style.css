@@ -159,10 +159,13 @@ li {
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 20px;
+  height: 35px;
   width: 100%;
   text-align: center;
-  background-color: aliceblue;
+  background-color: rgba(212, 212, 212, 0.99);
+  padding-top: 10px;
+
+  opacity: 0.8;
 }
 
 .float-area {
@@ -194,4 +197,34 @@ li {
   100% {
     transform: translateY(0px);
   }
+}
+/* 
+SHOW PAGE  */
+
+#show-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#show-container > img {
+  margin-top: 230px;
+  margin-left: 40px;
+  height: 250px;
+  width: 250px;
+}
+
+#show {
+  background-color: aliceblue;
+  border-radius: 10px;
+  box-shadow: gray 0px 5px 12px;
+  margin-top: 30px;
+  margin-left: 20px;
+  padding: 10px;
+  width: 60vmin;
+  border: 2px dotted gray;
+}
+
+#show > div {
+  margin: 15px;
 }
