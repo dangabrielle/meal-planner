@@ -129,13 +129,17 @@
       </div>
       <div id="shopping-list">
         <h3 class="day-of-week">Shopping List</h3>
-        <a class="recipe-btn" href="/shopping-list">View Your List</a>
-        <p>Preview:</p>
-        <% for (let i = 0; i < 2; i++) { %>
-        <ul>
-          <li><%=ingredient[i].ingredientName%></li>
-        </ul>
-        <% }%>
+        <a class="recipe-btn" href="/shopping-list">View Entire List</a>
+        <div class="float-area">
+          <div class="floating-img">
+            <p>Preview:</p>
+            <% for (let i = 0; i < 4; i++) { %>
+            <ul>
+              <li><%=ingredient[i].ingredientName%></li>
+            </ul>
+            <% }%>
+          </div>
+        </div>
       </div>
     </section>
     <main class="footer"><%- include('./partials/footer') %></main>
