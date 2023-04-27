@@ -83,13 +83,6 @@
           <option value="Friday">Friday</option>
         </select> </label
       ><br />
-      <label
-        >Ingredient:
-        <%ingredient.forEach(p => { %>
-            <%p.ingredientName.forEach(i => { %>
-              <input class="ingredient-value" type="text" name="ingredientName" value="<%=i %>"/>
-            <%  })%>
-        <%   })%>
       </label>
       <br />
       <label>Entree Name: <input type="text" name="entreeName" value="<%=recipe.entreeName %>" /> </label><br />
