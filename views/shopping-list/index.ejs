@@ -2,17 +2,18 @@
 <html lang="en">
   <%- include('../partials/head') %>
   <body>
-    <%- include('../partials/header') %>
+  <%- include('../partials/header') %>
     <section class="table">
       <table class="ingredients-table">
-        <thead>
+       
+           <thead>
           <tr>
             <th>Item</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody>
-          <% Object.values(Ingredient).forEach(i => { %> <%
+          <% Ingredient.forEach(i => { %> <%
           i.ingredientName.forEach(r => { %>
           <tr>
             <td><%=r%></td>
@@ -29,8 +30,7 @@
 
           <% }) %> <% }) %>
         </tbody>
-      </table>
-    </section>
-    <%- include('../partials/footer') %>
+    </section> 
+  <main class="footer"><%- include('../partials/footer') %></main>
   </body>
 </html>

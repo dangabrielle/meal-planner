@@ -64,7 +64,43 @@
 
 
 
+
     </div>
+
+        <p><%=recipe.directions%></p>
+      </div>      
+    </section><br>
+    <section>
+      <h2>Do you need to update your recipe?</h2>
+    <form action="/recipes/<%=recipe._id%>?_method=PUT" method="POST">        
+      <label
+        >Day of the week:
+        <select name="dayOfWeek">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+        </select> </label
+      ><br />
+      <label
+        >Ingredient:
+        <%ingredient.forEach(p => { %>
+            <%p.ingredientName.forEach(i => { %>
+              <input class="ingredient-value" type="text" name="ingredientName" value="<%=i %>"/>
+            <%  })%>
+        <%   })%>
+      </label>
+      <br />
+      <label>Entree Name: <input type="text" name="entreeName" value="<%=recipe.entreeName %>" /> </label><br />
+      <label>Cook Time: <input type="text" name="cookTime" value="<%=recipe.cookTime %>"/> </label><br />
+      <label>
+        Directions:
+        <textarea name="directions" cols="50" rows="4" value="<%=recipe.directions%>"></textarea>
+      </label>
+      <button type="submit">Update Recipe</button>
+    </form>
+  </section>
 
     <main class="footer"><%- include('../partials/footer') %></main>
   </body>

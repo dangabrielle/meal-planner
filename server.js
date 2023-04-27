@@ -20,8 +20,9 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/", indexRoutes);
-app.use("/recipes", recipeRoutes);
 app.use("/ingredients", ingredientRoutes);
+
+app.use("/recipes", recipeRoutes);
 
 app.use("/shopping-list", shoppingListRoutes);
 
