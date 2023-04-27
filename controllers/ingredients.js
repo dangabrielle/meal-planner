@@ -1,6 +1,6 @@
 const Recipe = require("../models/recipe");
 const Ingredient = require("../models/ingredient");
-const ShoppingList = require("../models/shopping-list");
+
 
 async function create(req, res) {
   try {

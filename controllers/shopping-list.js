@@ -10,6 +10,7 @@ async function deleteOne(req, res) {
   }
 }
 
+
 async function index(req, res) {
   try {
     const allIngredients = await Ingredient.find({}).populate("ingredientName");
@@ -27,4 +28,5 @@ async function index(req, res) {
 module.exports = {
   index,
   delete: deleteOne,
+
 };
