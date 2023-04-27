@@ -10,14 +10,6 @@ async function deleteOne(req, res) {
   }
 }
 
-// async function updateOne(req, res) {
-//     try {
-//         const itemToUpdate = await Ingredient.findByIdAndUpdate(req.params.id);
-//         res.redirect('/shopping-list')
-//     } catch (error) {
-//         res.render("error", { title: "Something went wrong" });
-//       }
-// }
 
 async function index(req, res) {
   try {
