@@ -13,6 +13,32 @@ body {
   font-family: sans-serif;
 }
 
+a:link,
+a:visited {
+  background-color: #d17562d1;
+  color: rgb(255, 255, 255);
+  padding: 5px 9px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: gray 0px 2px 5px;
+}
+
+a:hover,
+a:active {
+  background-color: #c64125;
+  color: rgb(255, 255, 255);
+}
+.recipe-btn {
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.recipe-list {
+  margin-bottom: 10px;
+}
 .header {
   display: flex;
   flex: row;
@@ -22,6 +48,7 @@ body {
 .header > div > h1 {
   margin: 20px;
   margin-top: 40px;
+  text-shadow: gray 1px 1px 2px;
 }
 
 .header > div > p {
@@ -89,6 +116,7 @@ body {
   height: 32vmin;
   width: 22vmin;
   border-radius: 10px;
+  background-color: rgb(255, 255, 255);
   border: 2px dotted darkgray;
   position: relative;
   text-align: center;
