@@ -16,11 +16,9 @@ async function create(req, res) {
     const newIngredient = await IngredientModel.create(req.body);
     const ingredientId = newIngredient._id;
     // const ingredient = await IngredientModel.find({}).sort("ingredientName");
-    // console.log(ingredient);
     const recipe = await Recipe.create(req.body);
     recipe.ingredients.push(ingredientId);
-    // recipe.ingredients.push(ingredient);
-    // console.log(recipe);
+   
     await recipe.save();
     res.redirect("/");
   } catch (error) {
@@ -33,15 +31,18 @@ async function updateRecipe(req, res) {
     try {
         const findRecipe = await Recipe.findById(req.params.id); 
 
-    req.body.ingredientName = req.body.ingredientName.trim(); // remove space chars at beginning or ending of string
-    req.body.ingredientName = req.body.ingredientName.split(/\s*,\s*/); // split comma seperated names into array
+    // req.body.ingredientName = req.body.ingredientName.trim(); // remove space chars at beginning or ending of string
+    // req.body.ingredientName = req.body.ingredientName.split(/\s*,\s*/); // split comma seperated names into array
+      // console.log(req.body.IngredientModel);
+    // const newIngredient = await IngredientModel.create(req.body);
+    // const ingredientId = newIngredient._id;
+    // findRecipe.ingredients.pop()
+    // findRecipe.ingredients.push(ingredientId);
+        findRecipe.dayOfWeek = req.body.dayOfWeek
 
-    const newIngredient = await IngredientModel.create(req.body);
-    const ingredientId = newIngredient._id;
-    findRecipe.ingredients.pop()
-    findRecipe.ingredients.push(ingredientId);
         findRecipe.cookTime = req.body.cookTime
-        console.log(findRecipe)
+        findRecipe.entreeName = req.body.entreeName
+        findRecipe.directions = req.body.directions
         await findRecipe.save();
         res.redirect(`/recipes/${findRecipe._id}`)
     } catch (error) { console.log(error)
