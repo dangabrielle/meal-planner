@@ -139,9 +139,8 @@ li {
   list-style-type: none;
 }
 
-.delete-button {
-  text-align: center;
-}
+
+
 
 .ingredients-table {
   padding: 5px 5px;
@@ -150,8 +149,20 @@ li {
   border: 1px dotted darkgrey;
 }
 
+.delete-button {
+  text-align: center;
+}
+
 .delete {
   background-color: red;
+}
+
+.update-text {
+  background-color: blanchedalmond;
+}
+
+.update {
+  background-color: green;
 }
 
 .footer {

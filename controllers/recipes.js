@@ -1,6 +1,5 @@
 const Recipe = require("../models/recipe");
-const Ingredient = require("../models/ingredient");
-const ingredient = require("../models/ingredient");
+const IngredientModel = require("../models/ingredient");
 
 function newRecipe(req, res) {
   res.render("recipes/new", {
@@ -14,15 +13,13 @@ async function create(req, res) {
     req.body.ingredientName = req.body.ingredientName.trim(); // remove space chars at beginning or ending of string
     req.body.ingredientName = req.body.ingredientName.split(/\s*,\s*/); // split comma seperated names into array
 
-    const newIngredient = await Ingredient.create(req.body);
+    const newIngredient = await IngredientModel.create(req.body);
     const ingredientId = newIngredient._id;
-    // const ingredient = await Ingredient.find({}).sort("ingredientName");
-    // console.log(ingredient);
+    // const ingredient = await IngredientModel.find({}).sort("ingredientName");
     const recipe = await Recipe.create(req.body);
     recipe.ingredients.push(ingredientId);
-    // recipe.ingredients.push(ingredient);
-    // console.log(recipe);
-    recipe.save();
+   
+    await recipe.save();
     res.redirect("/");
   } catch (error) {
     console.log(error);
@@ -30,25 +27,47 @@ async function create(req, res) {
   }
 }
 
+async function updateRecipe(req, res) {
+    try {
+        const findRecipe = await Recipe.findById(req.params.id); 
+
+    // req.body.ingredientName = req.body.ingredientName.trim(); // remove space chars at beginning or ending of string
+    // req.body.ingredientName = req.body.ingredientName.split(/\s*,\s*/); // split comma seperated names into array
+      // console.log(req.body.IngredientModel);
+    // const newIngredient = await IngredientModel.create(req.body);
+    // const ingredientId = newIngredient._id;
+    // findRecipe.ingredients.pop()
+    // findRecipe.ingredients.push(ingredientId);
+        findRecipe.dayOfWeek = req.body.dayOfWeek
+
+        findRecipe.cookTime = req.body.cookTime
+        findRecipe.entreeName = req.body.entreeName
+        findRecipe.directions = req.body.directions
+        await findRecipe.save();
+        res.redirect(`/recipes/${findRecipe._id}`)
+    } catch (error) { console.log(error)
+        res.render("error", { title: "Something went wrong" });
+      }
+}
+
 async function show(req, res) {
   try {
     const foundRecipe = await Recipe.findById(req.params.id);
-    // console.log(foundRecipe);
-    const foundIngredient = await Recipe.findById(req.params.id).populate(
+    const populateIng = await Recipe.findById(req.params.id).populate(
       "ingredients"
     );
-    const findIngredient = await foundIngredient.ingredients;
-    const ingredients = await Ingredient.find({
+
+
+    const grabIngredient = await populateIng.ingredients;
+    const sortedIngredients = await IngredientModel.find({
+
       _id: { $nin: foundRecipe.ingredients },
     }).sort("newIngredient");
-    // console.log(findIngredient);
-    console.log(ingredients);
-    // console.log(foundIngredient);
     res.render("recipes/show", {
       title: "Your Recipe",
       recipe: foundRecipe,
-      ingredient: findIngredient,
-      newIngredient: ingredients,
+      ingredient: grabIngredient,
+      newIngredient: sortedIngredients,
     });
   } catch (error) {
     res.render("error", { title: "Something went wrong" });
@@ -71,4 +90,5 @@ module.exports = {
   create,
   show,
   addToRecipe,
+  updateRecipe,
 };
