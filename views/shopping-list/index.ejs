@@ -3,15 +3,21 @@
   <%- include('../partials/head') %>
   <body>
   <%- include('../partials/header') %>
-    <section class="table">
+  <div class="shopping-list-div">
+    <section class="shopping-table">    
+      <h2>Your Weekly Shopping List:</h2>
+      <div class="shopping-list-div">
+      <img class="shop-img" src="/imgs/shopping.png" alt="man checking out at grocery store">
       <table class="ingredients-table">
-       
+        <div class="shopping-thead">
            <thead>
           <tr>
             <th>Item</th>
             <th>Delete</th>
           </tr>
         </thead>
+        </div>
+        <div class="shopping-tbody">
         <tbody>
           <% Ingredient.forEach(i => { %> <%
           i.ingredientName.forEach(r => { %>
@@ -19,18 +25,20 @@
             <td><%=r%></td>
             <td>
               <form
-                class="delete-button"
                 action="/shopping-list/<%=i._id%>?_method=DELETE"
                 method="POST"
               >
-                <input class="delete" type="submit" value="X" />
+                <input id="delete-btn" type="submit" value="X" />
               </form>
             </td>
           </tr>
 
           <% }) %> <% }) %>
         </tbody>
+        </div>
+      </div>
     </section> 
+  </div>  
   <main class="footer"><%- include('../partials/footer') %></main>
   </body>
 </html>
