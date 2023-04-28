@@ -3,32 +3,59 @@
   <%- include('../partials/head') %>
   <body>
     <%- include('../partials/header') %>
-    <h2>Add New Recipe</h2>
-    <form action="/recipes" method="POST">
-      <label
-        >Day of the week:
-        <select name="dayOfWeek">
-          <option value="Monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wednesday">Wednesday</option>
-          <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-        </select> </label
-      ><br />
-      <label
-        >Ingredient:
-        <input class="ingredient-value" type="text" name="ingredientName" />
+    <div class="new-container">
+      <section id="new-recipe">
+        <div>
+          <h2>Create Your Recipe:</h2>
+        </div>
+        <div class="create-recipe-div">
+            <form action="/recipes" method="POST">
+              <div id="form-labels">
+                <label
+                  >Day of the week:
+                  <select id="create-select-label"name="dayOfWeek">
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                  </select> </label
+                  >
+              </div> 
+              <div id="form-labels">   
+                <label
+                  >Ingredient(s): 
+                  
+                  <input class="create-input" type="text" name="ingredientName" />
+                </label>
+                <br />
+              </div>
+              <div id="form-labels">  
+                <label>Entree Name: <input class="create-input"type="text" name="entreeName" /> 
+                </label>
+                <br />
+              </div>
+              <div id="form-labels">
+                <label>Cook Time (min): <input class="create-input"type="text" name="cookTime" /> </label><br />
+              </div>
+              <div id="form-labels">
+                <label>
+                  Directions:
+                  <textarea name="directions" cols="50" rows="4"></textarea>
+                </div>
+                <div id="form-labels">
+                </label>
+              </div>                
+              <button id="add-recipe-btn"type="submit">Add Recipe</button>
 
-      </label>
-      <br />
-      <label>Entree Name: <input type="text" name="entreeName" /> </label><br />
-      <label>Cook Time: <input type="text" name="cookTime" /> </label><br />
-      <label>
-        Directions:
-        <textarea name="directions" cols="50" rows="4"></textarea>
-      </label>
-      <button type="submit">Add Recipe</button>
-    </form>
+            </form>
+          <div class="recipe-imgs">  
+            <img class="spoons-img" src="/imgs/spoons.gif" alt="measuring spoons">
+            <img class="mixer-img" src="/imgs/mixer.gif" alt="mixing bowl">
+          </div>
+        </div>      
+    </section>
+  </div>
 
     <main class="footer"><%- include('../partials/footer') %></main>
   </body>
