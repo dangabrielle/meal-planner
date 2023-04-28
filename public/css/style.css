@@ -130,31 +130,6 @@ li {
 }
 
 
-
-
-.ingredients-table {
-  padding: 5px 5px;
-  margin: 5px 5px;
-  text-align: center;
-  border: 1px dotted darkgrey;
-}
-
-.delete-button {
-  text-align: center;
-}
-
-.delete {
-  background-color: red;
-}
-
-.update-text {
-  background-color: blanchedalmond;
-}
-
-.update {
-  background-color: green;
-}
-
 .footer {
   position: fixed;
   left: 0;
@@ -227,4 +202,104 @@ SHOW PAGE  */
 
 #show > div {
   margin: 15px;
+}
+
+/* New Recipe Page */
+
+
+.new-container {
+  background-color: aliceblue;
+  border-radius: 10px;
+  box-shadow: gray 0px 5px 12px;
+  margin-top: 30px;
+  margin-left: 20px;
+  padding: 30px;
+  height: 40vmin;
+  width: 80vmin;
+  border: 2px dotted gray;
+}
+
+.create-recipe-div {
+  display: flex;
+  flex-direction: row;
+}
+
+#form-labels {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px;
+    margin: 5px 5px;
+    font-weight: bold;
+}
+
+.mixer-img {
+  width: 15vmin;
+  height: 18vmin;
+}
+
+
+.spoons-img {
+  width: 10vmin;
+  height: 10vmin;
+}
+
+
+/* Shopping List Page */
+
+.shopping-table {
+  
+  background-color: aliceblue;
+  border-radius: 10px;
+  box-shadow: gray 0px 5px 12px;
+  margin-top: 30px;
+  margin-left: 20px;
+  padding: 30px;
+  width: 80vmin;
+  border: 2px dotted gray;
+}
+
+.shopping-list-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.shop-img {
+  position: absolute;
+  margin-top: 7vmin;
+  margin-left: 30vmin;
+}
+
+.delete-button {
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  padding: 3px 3px;
+}
+
+.delete {
+  background-color: #c32b0d;
+  padding: 5px 5px;
+  border-radius: 10px;
+
+
+}
+
+.shopping-tbody td{
+  margin: 5px 5px;
+}
+
+
+ th {
+  padding: 5px 5px;
+  font-size: 25px;
+  font-weight: bolder;
+ }
+
+table.ingredients-table {
+  padding: 5px 5px;
+  margin: 5px 5px;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  border: 1px darkgrey;
 }
