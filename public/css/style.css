@@ -38,6 +38,7 @@ input[type="text"] {
   border: none;
   border-bottom: 1px solid rgb(134, 134, 134);
   font-size: 15px;
+  padding: 3px;
 }
 
 .create-input {
@@ -273,7 +274,7 @@ li {
   margin-top: 20px;
   background-color: rgb(240, 234, 226);
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   border: 2px solid rgb(191, 184, 171);
   box-shadow: gray 0px 5px 12px;
 }
