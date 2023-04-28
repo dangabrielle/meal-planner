@@ -192,8 +192,8 @@ a:active {
 }
 
 #shopping-list {
-  height: 32vmin;
-  width: 22vmin;
+  height: 295px;
+  width: 200px;
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
   border: 2px dotted darkgray;
