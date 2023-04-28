@@ -440,3 +440,8 @@ table.ingredients-table {
   text-align: center;
   border: 1px darkgrey;
 }
+
+#baby {
+  height: 300px;
+  width: 300px;
+}
