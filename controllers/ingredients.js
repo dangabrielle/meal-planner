@@ -1,14 +1,12 @@
 const Recipe = require("../models/recipe");
 const Ingredient = require("../models/ingredient");
 
+
 async function create(req, res) {
   try {
-    // const ingredient = req.body;
-    // ingredient.ingredientName = req.params.id;
-    await Recipe.create(req.body);
-    res.redirect("/ingredients");
+    const newItem = await ShoppingList.create(req.body);
+    res.redirect("/shopping-list");
   } catch (error) {
-    console.log(error);
     res.render("error", { title: "Something went wrong" });
   }
 }

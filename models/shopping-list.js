@@ -9,9 +9,6 @@ const shoppingListSchema = new Schema(
       ref: "Ingredient",
       required: true,
     },
-    quantity: {
-      type: Number,
-    },
   },
   { timestamps: true }
 );

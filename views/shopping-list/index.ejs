@@ -10,11 +10,10 @@
           <tr>
             <th>Item</th>
             <th>Delete</th>
-            <th>Update</th>
           </tr>
         </thead>
         <tbody>
-          <% Object.values(Ingredient).forEach(i => { %> <%
+          <% Ingredient.forEach(i => { %> <%
           i.ingredientName.forEach(r => { %>
           <tr>
             <td><%=r%></td>
@@ -32,6 +31,6 @@
           <% }) %> <% }) %>
         </tbody>
     </section> 
-  <%- include('../partials/footer') %>
+  <main class="footer"><%- include('../partials/footer') %></main>
   </body>
 </html>
