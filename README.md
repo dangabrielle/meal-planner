@@ -6,7 +6,7 @@ Meal planning can be a pain, especially on a busy schedule. We wanted to build a
 ## Landing Page & WireFrame:
 
 Full-stack CRUD Application
-![Full-stack CRUD Application](public/imgs/.png)
+![Full-stack CRUD Application](public/imgs/landing-page.png)
 
 
 WireFrame
@@ -28,7 +28,7 @@ Our Trello Board:
 <https://trello.com/b/HsQOPxp7>
 
 Our App:
-<>
+<https://young-badlands-56713.herokuapp.com/>
 
 This application can be used to create and store your favorite recipes. You can plan out your week by adding the recipe for the day you desire. You can also edit your recipe to make any changes needed. Each ingredient you add will automatically be added to your shopping list. In your shopping list you can delete items you may already have on hand. I hope you enjoy it!
 
