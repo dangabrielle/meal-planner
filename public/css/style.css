@@ -407,12 +407,14 @@ SHOW PAGE  */
   margin-left: 20px;
   padding: 30px;
   width: 80vmin;
+  height: 100%;
   border: 2px dotted gray;
 }
 
 .shopping-list-div {
   display: flex;
   flex-direction: row;
+  height: 100%;
 }
 
 .shopping-table > h2 {
