@@ -4,9 +4,6 @@
   <body>
     <%- include('../partials/header') %>
     <div id="show-container">
-
-
-      
       <section id="show">
         <div>
           <h2>Day of Week: <%=recipe.dayOfWeek%></h2>
@@ -17,7 +14,6 @@
         </div>
         <div>
           <h2>Cook Time <small>(min)</small></h2>
-  
           <p><%=recipe.cookTime%></p>
         </div>
         <div>
@@ -28,18 +24,14 @@
               <%p.ingredientName.forEach(i => { %>
                 <li><%=i%></li>
             <%  })%>
-  
             </ul>
        <%   })%>
         </ul>
-  
         </div>
         <div>
           <h2>Directions</h2>
-  
           <p><%=recipe.directions%></p>
         </div>
-  
         <div>
           <h3>Forgot an ingredient? Let's check our list:</h3>
           <ul>
@@ -55,22 +47,12 @@
                <% })%>
             <%  } ) %>
             </select>
-            <button type="submit">Add to Cast</button>
+            <button id="show-btn" type="submit">Add Ingredient</button>
           </form>
         </div>
       </section>
-      <img src="/imgs/magnify.gif">
-
-
-
-
-
-    </div>
-
-        <p><%=recipe.directions%></p>
-      </div>      
     </section><br>
-    <section>
+    <section class="show-update-div">
       <h2>Do you need to update your recipe?</h2>
     <form action="/recipes/<%=recipe._id%>?_method=PUT" method="POST">        
       <label
@@ -86,15 +68,18 @@
       </label>
       <br />
       <label>Entree Name: <input type="text" name="entreeName" value="<%=recipe.entreeName %>" /> </label><br />
-      <label>Cook Time: <input type="text" name="cookTime" value="<%=recipe.cookTime %>"/> </label><br />
+      <br>
+      <label>Cook Time (min): <input type="text" name="cookTime" value="<%=recipe.cookTime %>"/> </label><br />
+     <br>
       <label>
-        Directions:
+        Directions:<br>
         <textarea name="directions" cols="50" rows="4" value="<%=recipe.directions%>"></textarea>
       </label>
+      <br>
       <button type="submit">Update Recipe</button>
     </form>
+    <!-- <img id="magnify-man-img" src="/imgs/magnify.gif" height="150px"> -->
   </section>
-
     <main class="footer"><%- include('../partials/footer') %></main>
   </body>
 </html>
