@@ -25,11 +25,10 @@
             <td><%=r%></td>
             <td>
               <form
-                class="delete-button"
                 action="/shopping-list/<%=i._id%>?_method=DELETE"
                 method="POST"
               >
-                <input class="delete" type="submit" value="X" />
+                <input id="delete-btn" type="submit" value="X" />
               </form>
             </td>
           </tr>
