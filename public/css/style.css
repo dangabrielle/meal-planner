@@ -45,7 +45,7 @@ input[type="text"] {
 }
 
 #create-select-label {
-  margin: 20px;
+  margin-left: 10px;
 }
 
 textarea {
@@ -161,7 +161,12 @@ a:active {
   display: grid;
   grid-template-columns: repeat(3, 30vmin);
   grid-template-rows: repeat(2, 37vmin);
+  grid-gap: 20px;
   justify-items: center;
+  margin: 20px;
+}
+
+#index-h2 {
   margin: 20px;
 }
 
@@ -380,7 +385,6 @@ SHOW PAGE  */
   display: flex;
   flex-direction: column;
   padding: 3px;
-
   font-weight: bold;
 }
 
@@ -388,6 +392,10 @@ SHOW PAGE  */
   width: 15vmin;
   height: 18vmin;
   margin-left: 50px;
+}
+
+.recipe-imgs {
+  margin-top: 20px;
 }
 
 .spoons-img {
@@ -436,7 +444,7 @@ th {
 table.ingredients-table {
   padding: 5px 5px;
   margin: 5px 5px;
-  font-size: large;
+
   text-align: center;
   border: 1px darkgrey;
 }
@@ -444,4 +452,24 @@ table.ingredients-table {
 #baby {
   height: 300px;
   width: 300px;
+}
+
+#ingredients-table {
+  text-align: center;
+}
+
+#ing-tb-head {
+  padding: 0;
+  font-size: 22px;
+}
+
+#ing-h2 {
+  padding: 0;
+  margin: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.ing-btn {
+  margin: 15px;
 }

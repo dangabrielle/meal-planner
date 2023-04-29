@@ -3,35 +3,35 @@
   <%- include('../partials/head') %>
   <body>
     <%- include('../partials/header') %>
-    <h2>First, let's add our ingredients.</h2>
-    <section id="ingredients-table">
-          <table>
-              <thead>
-              <tr>
-                <th>Current Ingredients</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% ingredient.forEach(i => { %>
-              <tr>
-                <td><%=i.ingredientName%></td>
-              </tr>
-              <% }) %> 
-            </tbody>
-          </table> 
-    </section>  
-    <form action="/" method="POST">
-      <label
-        >Ingredient:
-        <input type="text" name="name" />
-       
-      <button type="submit">Add Ingredient</button>
-    </form>
-    <a href="/recipes/new">Next, Create Your Recipe</a>
-        
-        
+    <h2 id="ing-h2">First, let's add our ingredients.</h2>
+    <br />
+    <div>
+      <form action="/ingredients" method="POST">
+        <label>
+        Ingredient:
+        <input type="text" name="ingredientName" />
 
-    
+        <button class="ing-btn" type="submit">Add Ingredient</button>
+      </form>
+    </div>
+    <br />
+    <section id="ingredients-table">
+      <table>
+        <thead>
+          <tr>
+            <th id="ig-tb-head">Current Ingredients</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% ingredient.forEach(i => { %>
+          <tr>
+            <td><%=i.ingredientName%></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </section>
+    <a class="ing-btn" href="/recipes/new">Next, Create Your Recipe</a>
 
     <main class="footer"><%- include('../partials/footer') %></main>
   </body>

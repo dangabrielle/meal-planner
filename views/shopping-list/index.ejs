@@ -19,10 +19,9 @@
         </div>
         <div class="shopping-tbody">
         <tbody>
-          <% Ingredient.forEach(i => { %> <%
-          i.ingredientName.forEach(r => { %>
+          <% Ingredient.forEach(i => { %> 
           <tr>
-            <td><%=r%></td>
+            <td><%=i.ingredientName%></td>
             <td>
               <form
                 action="/shopping-list/<%=i._id%>?_method=DELETE"
@@ -33,7 +32,7 @@
             </td>
           </tr>
 
-          <% }) %> <% }) %>
+          <% }) %> 
         </tbody>
         </div>
       </div>

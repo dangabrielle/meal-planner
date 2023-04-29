@@ -20,11 +20,11 @@
           <h2>Ingredients</h2>
           <%ingredient.forEach(p => { %>
             <ul>
-              <%p.ingredientName.forEach(i => { %>
-                <li><%=i%></li>
+             
+                <li><%=p.ingredientName%></li>
             <%  })%>
             </ul>
-       <%   })%>
+
         </ul>
         </div>
         <div>
@@ -41,10 +41,9 @@
           <form action="/recipes/<%= recipe._id %>/ingredients" method="POST">
             <select name="ingredientId">
               <% newIngredient.map(p => { %>
-                <%p.ingredientName.forEach(i => { %>
-                <option value="<%=p._id%>"> <%=i%></option>
+                <option value="<%=p._id%>"> <%=p.ingredientName%></option>
                <% })%>
-            <%  } ) %>
+         
             </select>
             <button id="show-btn" type="submit">Add Ingredient</button>
           </form>

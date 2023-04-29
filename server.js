@@ -3,6 +3,7 @@ const logger = require("morgan");
 const indexRoutes = require("./routes/index");
 const recipeRoutes = require("./routes/recipes");
 const shoppingListRoutes = require("./routes/shopping-list");
+const ingredientRoutes = require("./routes/ingredients");
 
 const app = express();
 const methodOverride = require("method-override");
@@ -19,7 +20,7 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/", indexRoutes);
-
+app.use("/ingredients", ingredientRoutes);
 app.use("/recipes", recipeRoutes);
 
 app.use("/shopping-list", shoppingListRoutes);

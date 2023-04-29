@@ -5,9 +5,10 @@ const Schema = mongoose.Schema;
 const ingredientSchema = new Schema(
   {
     ingredientName: {
-      type: Array,
+      type: String,
     },
-  }, {timestamps: true }
-  );
+  },
+  { timestamps: true }
+);
 
 module.exports = mongoose.model("Ingredient", ingredientSchema);

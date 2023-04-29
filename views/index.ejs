@@ -3,7 +3,7 @@
   <%- include('./partials/head') %>
   <body>
     <%- include('./partials/header') %>
-    <h2>Let's start prepping!</h2>
+    <h2 id="index-h2">Let's start prepping!</h2>
     <section id="index">
       <div class="week-day">
         <div class="idx-img">
@@ -17,7 +17,8 @@
         <div class="idx-content">
           <h3 class="day-of-week">Monday</h3>
 
-          <a class="recipe-btn" href="/recipes/new">Create a Recipe</a><br />
+          <a class="recipe-btn" href="/ingredients/new">Create a Recipe</a
+          ><br />
           <p><em>Your Recipes:</em></p>
 
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Monday') {%>
@@ -43,7 +44,8 @@
         </div>
         <div class="idx-content">
           <h3 class="day-of-week">Tuesday</h3>
-          <a class="recipe-btn" href="/recipes/new">Create a Recipe</a><br />
+          <a class="recipe-btn" href="/ingredients/new">Create a Recipe</a
+          ><br />
           <p><em>Your Recipes:</em></p>
 
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Tuesday') {%>
@@ -66,13 +68,13 @@
         </div>
         <div class="idx-content">
           <h3 class="day-of-week">Wednesday</h3>
-          <a class="recipe-btn" href="/recipes/new">Create a Recipe</a><br />
+          <a class="recipe-btn" href="ingredients/new">Create a Recipe</a><br />
           <p><em>Your Recipes:</em></p>
 
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Wednesday') {%>
           <ul>
             <li>
-              <a class="recipe-list" href="/recipes/<%=r._id %>"
+              <a class="recipe-list" href="/ingredients/<%=r._id %>"
                 ><%=r.entreeName%></a
               >
             </li>
@@ -91,7 +93,8 @@
         </div>
         <div class="idx-content">
           <h3 class="day-of-week">Thursday</h3>
-          <a class="recipe-btn" href="/recipes/new">Create a Recipe</a><br />
+          <a class="recipe-btn" href="/ingredients/new">Create a Recipe</a
+          ><br />
           <p><em>Your Recipes:</em></p>
 
           <% recipe.forEach(r => { %> <% if(r.dayOfWeek === 'Thursday') {%>
@@ -116,7 +119,7 @@
         </div>
         <div class="idx-content">
           <h3 class="day-of-week">Friday</h3>
-          <a class="recipe-btn" href="/recipes/new">Create a Recipe</a>
+          <a class="recipe-btn" href="/ingredients/new">Create a Recipe</a>
           <br />
           <p><em>Your Recipes:</em></p>
 
@@ -137,11 +140,12 @@
         <div class="float-area">
           <div class="floating-img">
             <p><strong>Preview:</strong></p>
-            <% for (let i = 0; i < 4; i++) { %>
+            <% if(ingredient.length > 1) { %> <% for(let i = 0; i < 4; i++) { %>
+
             <ul>
               <li><%=ingredient[i].ingredientName%></li>
             </ul>
-            <% }%>
+            <% } %> <% } %>
           </div>
         </div>
       </div>
