@@ -162,6 +162,7 @@ a:active {
   grid-template-columns: repeat(3, 30vmin);
   grid-template-rows: repeat(2, 37vmin);
   grid-gap: 20px;
+  row-gap: 40px;
   justify-items: center;
   margin: 20px;
 }
